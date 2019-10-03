@@ -1,0 +1,2 @@
+# GetHiredAssignment
+For testing convenient
