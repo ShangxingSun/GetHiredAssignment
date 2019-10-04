@@ -2,7 +2,7 @@
 
 $inputText = "one two two three go go go big small big how sample test text to do it default
 returns string string is is in seconds since what is the end end \n";
-echo "input text is " . $inputText;
+echo "input text is :" . $inputText;
 $tokenArray = explode(" ",$inputText);
 $start = 0;
 $end = 1;
