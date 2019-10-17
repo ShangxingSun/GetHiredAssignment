@@ -37,8 +37,13 @@
             for (var i = 1; i <= 3; i++) {
                 document.getElementById("item" + i.toString()).style.display = "block";
             }
+        }else{
+            document.getElementById("item1").style.display = "block";
+            for (var i = 2; i <= 3; i++) {
+                document.getElementById("item" + i.toString()).style.display = "none";
+            }
         }
     }
-    var x = window.matchMedia("(min-width: 481px)")
+    var x = window.matchMedia("(max-width: 481px)")
     x.addListener(resize)
 </script>
