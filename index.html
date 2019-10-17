@@ -17,28 +17,28 @@
 </body>
 <script>
     document.getElementById('footer').addEventListener("click", myFunction);
-    let currentItem = 1;
+    let currentItem = 2;
     function myFunction(x) {
+        for (var i = 1; i <= 3; i++) {
+            if (i == currentItem) {
+                document.getElementById("item" + i.toString()).style.display = "block";
+            } else {
+                document.getElementById("item" + i.toString()).style.display = "none";
+            }
+        }
+        currentItem++;
+        if (currentItem > 3) {
+            currentItem = 1;
+        }
+
+    }
+    function resize(x) {
         if (x.matches) {
-            for (var i = 1; i <= 3; i++) {
-                if (i == currentItem) {
-                    document.getElementById("item" + i.toString()).style.display = "block";
-                } else {
-                    document.getElementById("item" + i.toString()).style.display = "none";
-                }
-            }
-            currentItem++;
-            if (currentItem > 3) {
-                currentItem = 1;
-            }
-        } else {
             for (var i = 1; i <= 3; i++) {
                 document.getElementById("item" + i.toString()).style.display = "block";
             }
         }
-
     }
-
-    var x = window.matchMedia("(max-width: 480px)")
-    x.addListener(myFunction)
+    var x = window.matchMedia("(min-width: 481px)")
+    x.addListener(resize)
 </script>
