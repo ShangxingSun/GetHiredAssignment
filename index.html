@@ -17,7 +17,7 @@
 </body>
 <script>
     document.getElementById('footer').addEventListener("click", myFunction);
-    let currentItem = 2;
+    let currentItem = 1;
     function myFunction(x) {
         if (x.matches) {
             for (var i = 1; i <= 3; i++) {
@@ -39,6 +39,6 @@
 
     }
 
-    var x = window.matchMedia("(max-width: 481px)")
+    var x = window.matchMedia("(max-width: 480px)")
     x.addListener(myFunction)
 </script>
