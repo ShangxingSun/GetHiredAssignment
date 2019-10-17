@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>GetHired Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GetHired Assignment</title>
 </head>
+
 <body>
 
-<div id="item1" class="item">1</div>
-<div id="item2" class="item">2</div>
-<div id="item3" class="item">3</div>
-<footer onclick="myFunction" id="footer">NEXT</footer>
+    <div id="item1" class="item">1</div>
+    <div id="item2" class="item">2</div>
+    <div id="item3" class="item">3</div>
+    <footer onclick="myFunction" id="footer">NEXT</footer>
 
 </body>
 <script>
     document.getElementById('footer').addEventListener("click", myFunction);
     let currentItem = 2;
-    function myFunction() {
-        for(var i = 1; i<=3; i++){
-            if(i==currentItem){
-                document.getElementById("item"+i.toString()).style.display = "block";
-            }else{
-                document.getElementById("item"+i.toString()).style.display = "none";
+    function myFunction(x) {
+        if (x.matches) {
+            for (var i = 1; i <= 3; i++) {
+                if (i == currentItem) {
+                    document.getElementById("item" + i.toString()).style.display = "block";
+                } else {
+                    document.getElementById("item" + i.toString()).style.display = "none";
+                }
+            }
+            currentItem++;
+            if (currentItem > 3) {
+                currentItem = 1;
+            }
+        } else {
+            for (var i = 1; i <= 3; i++) {
+                document.getElementById("item" + i.toString()).style.display = "block";
             }
         }
-        currentItem ++;
-        if(currentItem > 3){
-            currentItem = 1;
-        }
+
     }
+
+    var x = window.matchMedia("(max-width: 481px)")
+    myFunction(x)
+    x.addListener(myFunction)
 </script>
-</html>
